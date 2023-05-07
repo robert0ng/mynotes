@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "365764280966",
+    "project_id": "robert-flutter-notes",
+    "storage_bucket": "robert-flutter-notes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365764280966:android:1f14e675514e8af0310707",
+        "android_client_info": {
+          "package_name": "tw.robertwang.mynotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365764280966-126dq52kfss7b5862q5lb50micun366r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYUAPF5Nb6aq-PRk0Gzlq2yv5ChRxkJQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365764280966-126dq52kfss7b5862q5lb50micun366r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "365764280966-ikam93gmduahm16dqi714bqnfe9noafb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "tw.robertwang.mynotes"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
