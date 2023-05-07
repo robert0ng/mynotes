@@ -1,16 +1,17 @@
 # mynotes
 
-A new Flutter project.
+A Flutter project I following Youtuber talk about developing Flutter app with #Fireabse integrated.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+The course is from `freeCodeodeCamp` and here's [the link](https://www.youtube.com/watch?v=VPvVD8t02U8)
 
-A few resources to get you started if this is your first Flutter project:
+## Why am I learn Flutter
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Android app has development already been my career skill for about 10 years. Even things get changed a lot since it began, but I got **BORED!**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Trying something new is always the best way to enjoy the process and get excited. And since I bought a new motorcycle which is not always easy to find a parking lot, I decide to create an app just for that purpose.
+
+After this course, I expect to start working on that side project!
+
+Stay tuned!
