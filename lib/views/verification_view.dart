@@ -30,52 +30,55 @@ class _VerificationViewState extends State<VerificationView> {
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
-    return Column(
-      children: [
-        Text("Here's your email address to verify: ${user?.email ?? ""}"),
-        TextField(
-          controller: _email,
-          enableSuggestions: false,
-          autocorrect: false,
-          keyboardType: TextInputType.emailAddress,
-          decoration: const InputDecoration(
-            hintText: 'Enter your email here if above email isn\'t yours',
+    return Scaffold(
+      appBar: AppBar(title: const Text('Verification email')),
+      body: Column(
+        children: [
+          Text("Here's your email address to verify: ${user?.email ?? ""}"),
+          TextField(
+            controller: _email,
+            enableSuggestions: false,
+            autocorrect: false,
+            keyboardType: TextInputType.emailAddress,
+            decoration: const InputDecoration(
+              hintText: 'Enter your email here if above email isn\'t yours',
+            ),
           ),
-        ),
-        TextField(
-          controller: _password,
-          obscureText: true,
-          enableSuggestions: false,
-          autocorrect: false,
-          decoration: const InputDecoration(
-            hintText: 'Enter your password here',
+          TextField(
+            controller: _password,
+            obscureText: true,
+            enableSuggestions: false,
+            autocorrect: false,
+            decoration: const InputDecoration(
+              hintText: 'Enter your password here',
+            ),
           ),
-        ),
-        TextButton(
-            onPressed: () async {
-              if (user?.email == _email.text) {
-                await user?.sendEmailVerification();
-              } else {
-                try {
-                  final email = _email.text;
-                  final pwd = _password.text;
-                  final userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-                      email: email, password: pwd);
-                  print(userCredential);
+          TextButton(
+              onPressed: () async {
+                if (user?.email == _email.text) {
                   await user?.sendEmailVerification();
-                } on FirebaseAuthException catch (e) {
-                  if (e.code == 'user-not-found') {
-                    print("User not found!");
-                  } else if (e.code == 'wrong-password') {
-                    print('Wrong password!');
-                  }  else {
-                    print('something went wrong with error: ${e.code}');
+                } else {
+                  try {
+                    final email = _email.text;
+                    final pwd = _password.text;
+                    final userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+                        email: email, password: pwd);
+                    print(userCredential);
+                    await user?.sendEmailVerification();
+                  } on FirebaseAuthException catch (e) {
+                    if (e.code == 'user-not-found') {
+                      print("User not found!");
+                    } else if (e.code == 'wrong-password') {
+                      print('Wrong password!');
+                    }  else {
+                      print('something went wrong with error: ${e.code}');
+                    }
                   }
                 }
-              }
-            },
-            child: const Text('Send email verification'))
-      ],
+              },
+              child: const Text('Send email verification'))
+        ],
+      ),
     );
   }
 }
